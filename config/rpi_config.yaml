@@ -43,6 +43,13 @@ client:
   # Pi-specific optimizations
   memory_limit: "256MB"    # Memory usage limit
   cpu_limit: 80           # Max CPU usage %
+
+# Response sending configuration (Pi optimized)
+response:
+  enabled: true              # Enable sending responses back
+  max_length: 300           # Shorter responses for Pi performance
+  prefix: "AI: "            # Prefix for responses
+  suffix: "\n---\n"         # Suffix to mark end of response
   
 # Raspberry Pi hardware monitoring
 hardware:

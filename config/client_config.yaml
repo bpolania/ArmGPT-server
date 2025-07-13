@@ -31,6 +31,13 @@ logging:
 client:
   max_message_length: 512
   buffer_size: 4096
+
+# Response sending configuration
+response:
+  enabled: true              # Enable/disable sending responses back
+  max_length: 500           # Maximum response length to send
+  prefix: "AI: "            # Prefix for responses
+  suffix: "\n---\n"         # Suffix to mark end of response
   
 # Test mode configuration
 test:

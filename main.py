@@ -111,10 +111,49 @@ class TinyLLMSerialClient:
         
         if response:
             log_llm_event(self.logger, f"Processing complete")
+            
+            # Send response back via serial
+            if self._send_response(response):
+                log_serial_event(self.logger, f"Response sent back: \"{response[:50]}...\"")
+            else:
+                log_serial_event(self.logger, "Failed to send response back", "error")
+            
             # Log the transaction
             self._log_transaction(processed, response)
         else:
             log_llm_event(self.logger, "Failed to get response", "error")
+            
+    def _send_response(self, response: str) -> bool:
+        """Send LLM response back via serial port
+        
+        Args:
+            response: LLM response to send back
+            
+        Returns:
+            bool: True if sent successfully
+        """
+        # Get response sending configuration
+        response_config = self.config.get('response', {})
+        
+        # Check if response sending is enabled
+        if not response_config.get('enabled', True):
+            self.logger.debug("Response sending disabled in configuration")
+            return True
+            
+        # Prepare response for sending
+        max_length = response_config.get('max_length', 500)
+        prefix = response_config.get('prefix', 'AI: ')
+        suffix = response_config.get('suffix', '\n---\n')
+        
+        # Truncate response if too long
+        if len(response) > max_length - len(prefix) - len(suffix):
+            response = response[:max_length - len(prefix) - len(suffix) - 3] + "..."
+            
+        # Format final message
+        formatted_response = f"{prefix}{response}{suffix}"
+        
+        # Send via serial client
+        return self.serial_client.send_message(formatted_response)
             
     def _log_transaction(self, processed_message: dict, llm_response: str):
         """Log complete transaction to file
