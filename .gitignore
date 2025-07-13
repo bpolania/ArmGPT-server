@@ -32,8 +32,8 @@ ENV/
 *.swo
 
 # Logs
-logs/*.log
-*.log
+# logs/*.log
+# *.log
 
 # OS
 .DS_Store
