@@ -5,6 +5,55 @@ All notable changes to the ArmGPT-server project will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2025-07-13
+
+### ⚠️ Issue Identified - Serial Echo Feedback Loop
+
+#### Problem Description
+During testing with bidirectional serial communication, a feedback loop was discovered where the Python client receives its own transmitted messages back through the serial port. This creates an infinite loop where:
+
+1. ARM sender sends initial message to Python client
+2. Python client processes message and sends AI response back via serial
+3. **PROBLEM**: The sent AI response is immediately received back on the same serial port
+4. Python client treats the echoed message as new input and forwards it to LLM again
+5. This creates an endless conversation loop between the AI and itself
+
+#### Evidence from Logs
+- Every sent message appears as received within milliseconds
+- "AI:" prefixes accumulate in messages: `"AI: AI: User: ..."`
+- Even separator strings like `"---"` get processed as messages
+- System processes 10+ messages in rapid succession, all variations of the same echoed content
+
+#### Root Cause Analysis
+The serial port appears to be configured in a loopback mode where:
+- TX (transmit) and RX (receive) are physically connected, OR
+- The ARM device is echoing back everything it receives, OR
+- Both devices are connected to the same serial endpoints
+
+#### Proposed Solution: Echo Detection
+Implement message echo detection in the Python client to filter out recently sent messages:
+
+```python
+def _is_echo_message(self, received_message):
+    """Check if received message is an echo of recently sent message"""
+    # Check against recently sent messages
+    # Ignore messages that start with "AI:" prefix
+    # Ignore separator strings like "---"
+```
+
+#### ❓ **Question for Review**
+**Is echo detection the right approach, or should we focus on preventing the feedback loop at the hardware/protocol level?**
+
+Alternative approaches to consider:
+1. **Protocol-level solution**: Implement message direction indicators or handshaking
+2. **Hardware verification**: Ensure serial cable/connection isn't creating physical loopback
+3. **Configuration check**: Verify ARM device isn't configured to echo responses
+4. **Separate channels**: Use different serial ports or communication methods for TX/RX
+
+The echo detection approach treats the symptom but may not address the root cause. Should we investigate the hardware/protocol configuration first?
+
+---
+
 ## [1.0.0] - 2025-01-13
 
 ### Added - Complete TinyLLM Serial Client Implementation
