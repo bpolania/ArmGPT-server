@@ -1,0 +1,60 @@
+# Raspberry Pi Optimized Configuration for TinyLLM Serial Client
+
+serial:
+  port: "/dev/ttyUSB0"
+  baudrate: 9600
+  timeout: 1
+  reconnect_attempts: 10  # More attempts for Pi
+  reconnect_delay: 3      # Longer delay for stability
+
+tinyllm:
+  # Ollama configuration for Raspberry Pi
+  interface_type: "api"
+  api_endpoint: "http://localhost:11434/api/generate"
+  headers:
+    Content-Type: "application/json"
+  model: "tinyllama"
+  timeout: 60            # Longer timeout for Pi
+  max_retries: 5         # More retries
+  retry_delay: 5         # Longer retry delay
+  
+  # Model parameters optimized for Pi
+  max_tokens: 50         # Shorter responses for speed
+  temperature: 0.7
+  stream: false
+  
+  # Performance monitoring
+  enable_stats: true
+  
+logging:
+  level: "INFO"
+  file_level: "DEBUG"
+  file: "logs/serial_client.log"
+  console: true
+  
+  # Raspberry Pi logging optimizations
+  max_log_size: "10MB"   # Limit log file size
+  backup_count: 3        # Keep 3 backup files
+  
+client:
+  max_message_length: 256  # Smaller for Pi
+  buffer_size: 2048        # Smaller buffer
+  
+  # Pi-specific optimizations
+  memory_limit: "256MB"    # Memory usage limit
+  cpu_limit: 80           # Max CPU usage %
+  
+# Raspberry Pi hardware monitoring
+hardware:
+  monitor_temperature: true
+  max_temperature: 75     # Celsius
+  monitor_memory: true
+  max_memory_usage: 85    # Percentage
+  
+# Test mode for Pi
+test:
+  enabled: false
+  test_messages:
+    - "Hello from ARM assembly on Raspberry Pi"
+    - "Test message for TinyLlama"
+    - "Pi to Pi communication test"

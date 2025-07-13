@@ -1,0 +1,42 @@
+# TinyLLM Serial Client Configuration
+
+serial:
+  port: "/dev/ttyUSB0"
+  baudrate: 9600
+  timeout: 1
+  reconnect_attempts: 5
+  reconnect_delay: 2
+
+tinyllm:
+  # TinyLLM configuration - use "mock" for testing, "api" for Raspberry Pi
+  interface_type: "mock"  # Use "api" for Raspberry Pi with Ollama
+  api_endpoint: "http://localhost:11434/api/generate"
+  headers:
+    Content-Type: "application/json"
+  model: "tinyllama"  # Ollama model name
+  timeout: 45  # Increased for Raspberry Pi
+  max_retries: 3
+  retry_delay: 3
+  # Raspberry Pi optimizations
+  max_tokens: 100  # Limit response length for performance
+  temperature: 0.7
+  stream: false  # Disable streaming for simplicity
+
+logging:
+  level: "INFO"  # Console log level
+  file_level: "DEBUG"  # File log level
+  file: "logs/serial_client.log"
+  console: true
+  
+client:
+  max_message_length: 512
+  buffer_size: 4096
+  
+# Test mode configuration
+test:
+  enabled: false
+  test_messages:
+    - "TEST MESSAGE FROM ACORN SYSTEM"
+    - "Hello from ARM assembly!"
+    - "Custom test message with special characters: !@#$%"
+    - "Multi-word message for testing the pipeline"
