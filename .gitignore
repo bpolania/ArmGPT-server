@@ -42,4 +42,4 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
-*~
+*~.claude/
