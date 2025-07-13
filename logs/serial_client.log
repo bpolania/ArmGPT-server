@@ -1,0 +1,259 @@
+2025-07-12 19:21:26 - llm_interface - INFO - Using command line LLM interface
+2025-07-12 19:21:26 - root - INFO - SYSTEM: Starting in TEST MODE
+2025-07-12 19:21:26 - root - INFO - SERIAL: Simulating message 1/4: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:21:26 - message_processor - DEBUG - Processed message: {'raw': 'TEST MESSAGE FROM ACORN SYSTEM', 'cleaned': 'TEST MESSAGE FROM ACORN SYSTEM', 'type': 'test', 'length': 30, 'timestamp': '2025-07-12T19:21:26.841302', 'valid': True}
+2025-07-12 19:21:26 - root - INFO - PROCESS: Cleaned message: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:21:26 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:21:26 - llm_interface - DEBUG - Executing LLM command: tinyllm [ARM System Test] TEST MESSAGE FROM ACORN SYSTEM
+2025-07-12 19:21:26 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:26 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:28 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:21:28 - llm_interface - DEBUG - Executing LLM command: tinyllm [ARM System Test] TEST MESSAGE FROM ACORN SYSTEM
+2025-07-12 19:21:28 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:28 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:30 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:21:30 - llm_interface - DEBUG - Executing LLM command: tinyllm [ARM System Test] TEST MESSAGE FROM ACORN SYSTEM
+2025-07-12 19:21:30 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:30 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:21:30 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:21:32 - root - INFO - SERIAL: Simulating message 2/4: "Hello from ARM assembly!"
+2025-07-12 19:21:32 - message_processor - DEBUG - Processed message: {'raw': 'Hello from ARM assembly!', 'cleaned': 'Hello from ARM assembly!', 'type': 'custom', 'length': 24, 'timestamp': '2025-07-12T19:21:32.866291', 'valid': True}
+2025-07-12 19:21:32 - root - INFO - PROCESS: Cleaned message: "Hello from ARM assembly!"
+2025-07-12 19:21:32 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:21:32 - llm_interface - DEBUG - Executing LLM command: tinyllm Hello from ARM assembly!
+2025-07-12 19:21:32 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:32 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:34 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:21:34 - llm_interface - DEBUG - Executing LLM command: tinyllm Hello from ARM assembly!
+2025-07-12 19:21:34 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:34 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:36 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:21:36 - llm_interface - DEBUG - Executing LLM command: tinyllm Hello from ARM assembly!
+2025-07-12 19:21:36 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:36 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:21:36 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:21:38 - root - INFO - SERIAL: Simulating message 3/4: "Custom test message with special characters: !@#$%"
+2025-07-12 19:21:38 - message_processor - DEBUG - Processed message: {'raw': 'Custom test message with special characters: !@#$%', 'cleaned': 'Custom test message with special characters: !@#$%', 'type': 'custom', 'length': 50, 'timestamp': '2025-07-12T19:21:38.894625', 'valid': True}
+2025-07-12 19:21:38 - root - INFO - PROCESS: Cleaned message: "Custom test message with special characters: !@#$%"
+2025-07-12 19:21:38 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:21:38 - llm_interface - DEBUG - Executing LLM command: tinyllm Custom test message with special characters: !@#$%
+2025-07-12 19:21:38 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:38 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:40 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:21:40 - llm_interface - DEBUG - Executing LLM command: tinyllm Custom test message with special characters: !@#$%
+2025-07-12 19:21:40 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:40 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:42 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:21:42 - llm_interface - DEBUG - Executing LLM command: tinyllm Custom test message with special characters: !@#$%
+2025-07-12 19:21:42 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:42 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:21:42 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:21:44 - root - INFO - SERIAL: Simulating message 4/4: "Multi-word message for testing the pipeline"
+2025-07-12 19:21:44 - message_processor - DEBUG - Processed message: {'raw': 'Multi-word message for testing the pipeline', 'cleaned': 'Multi-word message for testing the pipeline', 'type': 'custom', 'length': 43, 'timestamp': '2025-07-12T19:21:44.916382', 'valid': True}
+2025-07-12 19:21:44 - root - INFO - PROCESS: Cleaned message: "Multi-word message for testing the pipeline"
+2025-07-12 19:21:44 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:21:44 - llm_interface - DEBUG - Executing LLM command: tinyllm Multi-word message for testing the pipeline
+2025-07-12 19:21:44 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:44 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:46 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:21:46 - llm_interface - DEBUG - Executing LLM command: tinyllm Multi-word message for testing the pipeline
+2025-07-12 19:21:46 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:46 - llm_interface - WARNING - LLM request failed, retrying in 2 seconds...
+2025-07-12 19:21:48 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:21:48 - llm_interface - DEBUG - Executing LLM command: tinyllm Multi-word message for testing the pipeline
+2025-07-12 19:21:48 - llm_interface - ERROR - LLM command 'tinyllm' not found
+2025-07-12 19:21:48 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:21:48 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:21:50 - root - INFO - SYSTEM: Test mode completed
+2025-07-12 19:22:09 - llm_interface - INFO - Using mock LLM interface for testing
+2025-07-12 19:22:09 - root - INFO - SYSTEM: Starting in TEST MODE
+2025-07-12 19:22:09 - root - INFO - SERIAL: Simulating message 1/4: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:22:09 - message_processor - DEBUG - Processed message: {'raw': 'TEST MESSAGE FROM ACORN SYSTEM', 'cleaned': 'TEST MESSAGE FROM ACORN SYSTEM', 'type': 'test', 'length': 30, 'timestamp': '2025-07-12T19:22:09.580390', 'valid': True}
+2025-07-12 19:22:09 - root - INFO - PROCESS: Cleaned message: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:22:09 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:22:10 - llm_interface - DEBUG - Mock LLM response: This is a mock response to your message.
+2025-07-12 19:22:10 - llm_interface - INFO - LLM: Response received (0.505s): "This is a mock response to your message."
+2025-07-12 19:22:10 - root - INFO - LLM: Processing complete
+2025-07-12 19:22:12 - root - INFO - SERIAL: Simulating message 2/4: "Hello from ARM assembly!"
+2025-07-12 19:22:12 - message_processor - DEBUG - Processed message: {'raw': 'Hello from ARM assembly!', 'cleaned': 'Hello from ARM assembly!', 'type': 'custom', 'length': 24, 'timestamp': '2025-07-12T19:22:12.088639', 'valid': True}
+2025-07-12 19:22:12 - root - INFO - PROCESS: Cleaned message: "Hello from ARM assembly!"
+2025-07-12 19:22:12 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:22:12 - llm_interface - DEBUG - Mock LLM response: I understand you sent: Hello from ARM assembly!
+2025-07-12 19:22:12 - llm_interface - INFO - LLM: Response received (0.504s): "I understand you sent: Hello from ARM assembly!"
+2025-07-12 19:22:12 - root - INFO - LLM: Processing complete
+2025-07-12 19:22:14 - root - INFO - SERIAL: Simulating message 3/4: "Custom test message with special characters: !@#$%"
+2025-07-12 19:22:14 - message_processor - DEBUG - Processed message: {'raw': 'Custom test message with special characters: !@#$%', 'cleaned': 'Custom test message with special characters: !@#$%', 'type': 'custom', 'length': 50, 'timestamp': '2025-07-12T19:22:14.598250', 'valid': True}
+2025-07-12 19:22:14 - root - INFO - PROCESS: Cleaned message: "Custom test message with special characters: !@#$%"
+2025-07-12 19:22:14 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:22:15 - llm_interface - DEBUG - Mock LLM response: Mock LLM processed your input successfully.
+2025-07-12 19:22:15 - llm_interface - INFO - LLM: Response received (0.504s): "Mock LLM processed your input successfully."
+2025-07-12 19:22:15 - root - INFO - LLM: Processing complete
+2025-07-12 19:22:17 - root - INFO - SERIAL: Simulating message 4/4: "Multi-word message for testing the pipeline"
+2025-07-12 19:22:17 - message_processor - DEBUG - Processed message: {'raw': 'Multi-word message for testing the pipeline', 'cleaned': 'Multi-word message for testing the pipeline', 'type': 'custom', 'length': 43, 'timestamp': '2025-07-12T19:22:17.108283', 'valid': True}
+2025-07-12 19:22:17 - root - INFO - PROCESS: Cleaned message: "Multi-word message for testing the pipeline"
+2025-07-12 19:22:17 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:22:17 - llm_interface - DEBUG - Mock LLM response: Response generated for testing purposes.
+2025-07-12 19:22:17 - llm_interface - INFO - LLM: Response received (0.505s): "Response generated for testing purposes."
+2025-07-12 19:22:17 - root - INFO - LLM: Processing complete
+2025-07-12 19:22:19 - root - INFO - SYSTEM: Test mode completed
+2025-07-12 19:38:32 - llm_interface - INFO - Using API LLM interface
+2025-07-12 19:38:32 - root - INFO - SYSTEM: Starting in TEST MODE
+2025-07-12 19:38:32 - root - INFO - SERIAL: Simulating message 1/4: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:38:32 - message_processor - DEBUG - Processed message: {'raw': 'TEST MESSAGE FROM ACORN SYSTEM', 'cleaned': 'TEST MESSAGE FROM ACORN SYSTEM', 'type': 'test', 'length': 30, 'timestamp': '2025-07-12T19:38:32.180535', 'valid': True}
+2025-07-12 19:38:32 - root - INFO - PROCESS: Cleaned message: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:38:32 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:38:32 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:32 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': '[ARM System Test] TEST MESSAGE FROM ACORN SYSTEM', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:32 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:32 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:32 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:35 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:38:35 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:35 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': '[ARM System Test] TEST MESSAGE FROM ACORN SYSTEM', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:35 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:35 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:35 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:38 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:38:38 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:38 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': '[ARM System Test] TEST MESSAGE FROM ACORN SYSTEM', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:38 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:38 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:38 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:38:38 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:38:40 - root - INFO - SERIAL: Simulating message 2/4: "Hello from ARM assembly!"
+2025-07-12 19:38:40 - message_processor - DEBUG - Processed message: {'raw': 'Hello from ARM assembly!', 'cleaned': 'Hello from ARM assembly!', 'type': 'custom', 'length': 24, 'timestamp': '2025-07-12T19:38:40.204183', 'valid': True}
+2025-07-12 19:38:40 - root - INFO - PROCESS: Cleaned message: "Hello from ARM assembly!"
+2025-07-12 19:38:40 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:38:40 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:40 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Hello from ARM assembly!', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:40 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:40 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:40 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:43 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:38:43 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:43 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Hello from ARM assembly!', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:43 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:43 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:43 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:46 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:38:46 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:46 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Hello from ARM assembly!', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:46 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:46 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:46 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:38:46 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:38:48 - root - INFO - SERIAL: Simulating message 3/4: "Custom test message with special characters: !@#$%"
+2025-07-12 19:38:48 - message_processor - DEBUG - Processed message: {'raw': 'Custom test message with special characters: !@#$%', 'cleaned': 'Custom test message with special characters: !@#$%', 'type': 'custom', 'length': 50, 'timestamp': '2025-07-12T19:38:48.220197', 'valid': True}
+2025-07-12 19:38:48 - root - INFO - PROCESS: Cleaned message: "Custom test message with special characters: !@#$%"
+2025-07-12 19:38:48 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:38:48 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:48 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Custom test message with special characters: !@#$%', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:48 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:48 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:48 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:51 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:38:51 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:51 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Custom test message with special characters: !@#$%', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:51 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:51 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:51 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:54 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:38:54 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:54 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Custom test message with special characters: !@#$%', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:54 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:54 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:54 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:38:54 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:38:56 - root - INFO - SERIAL: Simulating message 4/4: "Multi-word message for testing the pipeline"
+2025-07-12 19:38:56 - message_processor - DEBUG - Processed message: {'raw': 'Multi-word message for testing the pipeline', 'cleaned': 'Multi-word message for testing the pipeline', 'type': 'custom', 'length': 43, 'timestamp': '2025-07-12T19:38:56.265955', 'valid': True}
+2025-07-12 19:38:56 - root - INFO - PROCESS: Cleaned message: "Multi-word message for testing the pipeline"
+2025-07-12 19:38:56 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:38:56 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:56 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Multi-word message for testing the pipeline', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:56 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:56 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:56 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:38:59 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 2/3)...
+2025-07-12 19:38:59 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:38:59 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Multi-word message for testing the pipeline', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:38:59 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:38:59 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:38:59 - llm_interface - WARNING - LLM request failed, retrying in 3 seconds...
+2025-07-12 19:39:02 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 3/3)...
+2025-07-12 19:39:02 - llm_interface - DEBUG - Sending request to LLM API: http://localhost:11434/api/generate
+2025-07-12 19:39:02 - llm_interface - DEBUG - Payload: {'model': 'tinyllama', 'prompt': 'Multi-word message for testing the pipeline', 'stream': False, 'options': {'temperature': 0.7, 'num_predict': 100}}
+2025-07-12 19:39:02 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-12 19:39:02 - llm_interface - ERROR - Failed to connect to LLM API at http://localhost:11434/api/generate
+2025-07-12 19:39:02 - llm_interface - ERROR - All LLM request attempts failed
+2025-07-12 19:39:02 - root - ERROR - LLM: Failed to get response
+2025-07-12 19:39:04 - root - INFO - SYSTEM: Test mode completed
+2025-07-12 19:39:32 - llm_interface - INFO - Using mock LLM interface for testing
+2025-07-12 19:39:32 - root - INFO - SYSTEM: Starting in TEST MODE
+2025-07-12 19:39:32 - root - INFO - SERIAL: Simulating message 1/4: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:39:32 - message_processor - DEBUG - Processed message: {'raw': 'TEST MESSAGE FROM ACORN SYSTEM', 'cleaned': 'TEST MESSAGE FROM ACORN SYSTEM', 'type': 'test', 'length': 30, 'timestamp': '2025-07-12T19:39:32.834304', 'valid': True}
+2025-07-12 19:39:32 - root - INFO - PROCESS: Cleaned message: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-12 19:39:32 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:39:33 - llm_interface - DEBUG - Mock LLM response: This is a mock response to your message.
+2025-07-12 19:39:33 - llm_interface - INFO - LLM: Response received (0.502s): "This is a mock response to your message."
+2025-07-12 19:39:33 - root - INFO - LLM: Processing complete
+2025-07-12 19:39:35 - root - INFO - SERIAL: Simulating message 2/4: "Hello from ARM assembly!"
+2025-07-12 19:39:35 - message_processor - DEBUG - Processed message: {'raw': 'Hello from ARM assembly!', 'cleaned': 'Hello from ARM assembly!', 'type': 'custom', 'length': 24, 'timestamp': '2025-07-12T19:39:35.341642', 'valid': True}
+2025-07-12 19:39:35 - root - INFO - PROCESS: Cleaned message: "Hello from ARM assembly!"
+2025-07-12 19:39:35 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:39:35 - llm_interface - DEBUG - Mock LLM response: I understand you sent: Hello from ARM assembly!
+2025-07-12 19:39:35 - llm_interface - INFO - LLM: Response received (0.501s): "I understand you sent: Hello from ARM assembly!"
+2025-07-12 19:39:35 - root - INFO - LLM: Processing complete
+2025-07-12 19:39:37 - root - INFO - SERIAL: Simulating message 3/4: "Custom test message with special characters: !@#$%"
+2025-07-12 19:39:37 - message_processor - DEBUG - Processed message: {'raw': 'Custom test message with special characters: !@#$%', 'cleaned': 'Custom test message with special characters: !@#$%', 'type': 'custom', 'length': 50, 'timestamp': '2025-07-12T19:39:37.848557', 'valid': True}
+2025-07-12 19:39:37 - root - INFO - PROCESS: Cleaned message: "Custom test message with special characters: !@#$%"
+2025-07-12 19:39:37 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:39:38 - llm_interface - DEBUG - Mock LLM response: Mock LLM processed your input successfully.
+2025-07-12 19:39:38 - llm_interface - INFO - LLM: Response received (0.504s): "Mock LLM processed your input successfully."
+2025-07-12 19:39:38 - root - INFO - LLM: Processing complete
+2025-07-12 19:39:40 - root - INFO - SERIAL: Simulating message 4/4: "Multi-word message for testing the pipeline"
+2025-07-12 19:39:40 - message_processor - DEBUG - Processed message: {'raw': 'Multi-word message for testing the pipeline', 'cleaned': 'Multi-word message for testing the pipeline', 'type': 'custom', 'length': 43, 'timestamp': '2025-07-12T19:39:40.355891', 'valid': True}
+2025-07-12 19:39:40 - root - INFO - PROCESS: Cleaned message: "Multi-word message for testing the pipeline"
+2025-07-12 19:39:40 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-12 19:39:40 - llm_interface - DEBUG - Mock LLM response: Response generated for testing purposes.
+2025-07-12 19:39:40 - llm_interface - INFO - LLM: Response received (0.502s): "Response generated for testing purposes."
+2025-07-12 19:39:40 - root - INFO - LLM: Processing complete
+2025-07-12 19:39:42 - root - INFO - SYSTEM: Test mode completed
+2025-07-13 12:57:34 - llm_interface - INFO - Using mock LLM interface for testing
+2025-07-13 12:57:34 - root - INFO - SYSTEM: Starting in TEST MODE
+2025-07-13 12:57:34 - root - INFO - SERIAL: Simulating message 1/4: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-13 12:57:34 - message_processor - DEBUG - Processed message: {'raw': 'TEST MESSAGE FROM ACORN SYSTEM', 'cleaned': 'TEST MESSAGE FROM ACORN SYSTEM', 'type': 'test', 'length': 30, 'timestamp': '2025-07-13T12:57:34.268311', 'valid': True}
+2025-07-13 12:57:34 - root - INFO - PROCESS: Cleaned message: "TEST MESSAGE FROM ACORN SYSTEM"
+2025-07-13 12:57:34 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-13 12:57:34 - llm_interface - DEBUG - Mock LLM response: This is a mock response to your message.
+2025-07-13 12:57:34 - llm_interface - INFO - LLM: Response received (0.501s): "This is a mock response to your message."
+2025-07-13 12:57:34 - root - INFO - LLM: Processing complete
+2025-07-13 12:57:34 - serial_client - ERROR - Cannot send - serial port not connected
+2025-07-13 12:57:34 - root - ERROR - SERIAL: Failed to send response back
+2025-07-13 12:57:36 - root - INFO - SERIAL: Simulating message 2/4: "Hello from ARM assembly!"
+2025-07-13 12:57:36 - message_processor - DEBUG - Processed message: {'raw': 'Hello from ARM assembly!', 'cleaned': 'Hello from ARM assembly!', 'type': 'custom', 'length': 24, 'timestamp': '2025-07-13T12:57:36.777238', 'valid': True}
+2025-07-13 12:57:36 - root - INFO - PROCESS: Cleaned message: "Hello from ARM assembly!"
+2025-07-13 12:57:36 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-13 12:57:37 - llm_interface - DEBUG - Mock LLM response: I understand you sent: Hello from ARM assembly!
+2025-07-13 12:57:37 - llm_interface - INFO - LLM: Response received (0.505s): "I understand you sent: Hello from ARM assembly!"
+2025-07-13 12:57:37 - root - INFO - LLM: Processing complete
+2025-07-13 12:57:37 - serial_client - ERROR - Cannot send - serial port not connected
+2025-07-13 12:57:37 - root - ERROR - SERIAL: Failed to send response back
+2025-07-13 12:57:39 - root - INFO - SERIAL: Simulating message 3/4: "Custom test message with special characters: !@#$%"
+2025-07-13 12:57:39 - message_processor - DEBUG - Processed message: {'raw': 'Custom test message with special characters: !@#$%', 'cleaned': 'Custom test message with special characters: !@#$%', 'type': 'custom', 'length': 50, 'timestamp': '2025-07-13T12:57:39.288976', 'valid': True}
+2025-07-13 12:57:39 - root - INFO - PROCESS: Cleaned message: "Custom test message with special characters: !@#$%"
+2025-07-13 12:57:39 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-13 12:57:39 - llm_interface - DEBUG - Mock LLM response: Mock LLM processed your input successfully.
+2025-07-13 12:57:39 - llm_interface - INFO - LLM: Response received (0.507s): "Mock LLM processed your input successfully."
+2025-07-13 12:57:39 - root - INFO - LLM: Processing complete
+2025-07-13 12:57:39 - serial_client - ERROR - Cannot send - serial port not connected
+2025-07-13 12:57:39 - root - ERROR - SERIAL: Failed to send response back
+2025-07-13 12:57:41 - root - INFO - SERIAL: Simulating message 4/4: "Multi-word message for testing the pipeline"
+2025-07-13 12:57:41 - message_processor - DEBUG - Processed message: {'raw': 'Multi-word message for testing the pipeline', 'cleaned': 'Multi-word message for testing the pipeline', 'type': 'custom', 'length': 43, 'timestamp': '2025-07-13T12:57:41.801725', 'valid': True}
+2025-07-13 12:57:41 - root - INFO - PROCESS: Cleaned message: "Multi-word message for testing the pipeline"
+2025-07-13 12:57:41 - llm_interface - INFO - LLM: Forwarding to TinyLLM (attempt 1/3)...
+2025-07-13 12:57:42 - llm_interface - DEBUG - Mock LLM response: Response generated for testing purposes.
+2025-07-13 12:57:42 - llm_interface - INFO - LLM: Response received (0.505s): "Response generated for testing purposes."
+2025-07-13 12:57:42 - root - INFO - LLM: Processing complete
+2025-07-13 12:57:42 - serial_client - ERROR - Cannot send - serial port not connected
+2025-07-13 12:57:42 - root - ERROR - SERIAL: Failed to send response back
+2025-07-13 12:57:44 - root - INFO - SYSTEM: Test mode completed
