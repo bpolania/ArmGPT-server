@@ -11,9 +11,9 @@ This client is part of a dual-Pi communication system where:
 ```
 ┌─────────────────┐    USB Serial   ┌─────────────────┐    TinyLLM      ┌─────────────────┐
 │   SENDER PI     │     Cable       │   RECEIVER PI   │   Processing    │    TinyLLM      │
-│                 │ ──────────────▶ │                 │ ──────────────▶ │                 │
-│ ARM Assembly    │  /dev/ttyUSB0   │ Python Client   │                 │ AI Response     │
-│ Program         │   9600 baud     │ (This Code)     │                 │ Generation      │
+│                 │ ◄─────────────▶ │                 │ ──────────────▶ │                 │
+│ ARM Assembly    │  /dev/ttyUSB0   │ Python Client   │    ◄────────────│ AI Response     │
+│ Program         │   9600 baud     │ (This Code)     │   Response Back │ Generation      │
 └─────────────────┘                 └─────────────────┘                 └─────────────────┘
 ```
 
@@ -67,6 +67,7 @@ This implementation has been **successfully tested** on Raspberry Pi 4 with:
 [03:54:59.307] INFO     LLM: Forwarding to TinyLLM (attempt 1/5)...
 [03:55:03.398] INFO     LLM: Response received (4.091s): "Certainly! Here's an example of how you can use the Arm assembly command in Raspberry Pi..."
 [03:55:03.398] INFO     LLM: Processing complete
+[03:55:03.399] INFO     SERIAL: Response sent back: "AI: Certainly! Here's an example of how you can use..."
 ```
 
 ## 📡 Supported Message Types
@@ -115,6 +116,15 @@ tinyllm:
   temperature: 0.7
 ```
 
+### Response Configuration
+```yaml
+response:
+  enabled: true               # Enable/disable sending responses back
+  max_length: 500            # Maximum response length to send
+  prefix: "AI: "             # Prefix for responses
+  suffix: "\n---\n"          # Suffix to mark end of response
+```
+
 ### Logging Configuration
 ```yaml
 logging:
@@ -131,6 +141,7 @@ logging:
 - ✅ Automatic device detection and reconnection
 - ✅ Robust error handling and recovery
 - ✅ Hardware buffer management
+- ✅ **Bidirectional communication** - sends AI responses back
 
 ### Message Processing
 - ✅ Message cleaning and validation

@@ -32,8 +32,8 @@ ENV/
 *.swo
 
 # Logs
-logs/*.log
-*.log
+# logs/*.log
+# *.log
 
 # OS
 .DS_Store
@@ -43,3 +43,6 @@ Thumbs.db
 *.tmp
 *.bak
 *~
+
+# Claude Code
+.claude/
