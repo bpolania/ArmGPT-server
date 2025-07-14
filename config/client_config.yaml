@@ -37,7 +37,7 @@ response:
   enabled: true              # Enable/disable sending responses back
   max_length: 500           # Maximum response length to send
   prefix: "AI: "            # Prefix for responses
-  suffix: "\n---\n"         # Suffix to mark end of response
+  suffix: "<<<END>>>"       # Unique suffix to mark end of response
   
 # Test mode configuration
 test:

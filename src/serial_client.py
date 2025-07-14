@@ -217,7 +217,15 @@ class SerialClient:
             if not message.endswith('\n'):
                 message += '\n'
                 
-            self.port.write(message.encode('ascii'))
+            # Send in smaller chunks to avoid buffer overflow
+            chunk_size = 64  # Safe size for most serial buffers
+            message_bytes = message.encode('ascii')
+            
+            for i in range(0, len(message_bytes), chunk_size):
+                chunk = message_bytes[i:i+chunk_size]
+                self.port.write(chunk)
+                time.sleep(0.01)  # Small delay between chunks
+                
             self.logger.debug(f"Sent message: '{message.strip()}'")
             return True
             
