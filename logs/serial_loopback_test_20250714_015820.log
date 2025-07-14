@@ -1,0 +1,55 @@
+
+=== Serial Loopback Test ===
+Port: /dev/ttyUSB0
+Baudrate: 9600
+Timestamp: 2025-07-14 01:58:20.844552
+
+Serial port opened successfully
+Starting read thread...
+
+=== TEST 1: Simple Message ===
+[2025-07-14 01:58:21.860355] SENDING: TEST_1752454701
+[2025-07-14 01:58:21.906932] RECEIVED: TEST_1752454701
+
+=== TEST 2: AI Response Format ===
+[2025-07-14 01:58:23.860638] SENDING: AI: Test response 1752454703
+---
+[2025-07-14 01:58:23.919087] RECEIVED: AI: Test response 1752454703
+[2025-07-14 01:58:23.919210] RECEIVED: ---
+
+=== TEST 3: Message Without Newline ===
+[2025-07-14 01:58:25.860897] SENDING: NO_NEWLINE_1752454705
+[2025-07-14 01:58:26.014278] RECEIVED: NO_NEWLINE_1752454705
+
+=== ANALYSIS ===
+
+❌ ECHO DETECTED! Found 4 echoed message(s):
+  Sent: 'TEST_1752454701'
+  Received: 'TEST_1752454701'
+  Delay: 0.047 seconds
+
+  Sent: 'AI: Test response 1752454703
+---'
+  Received: 'AI: Test response 1752454703'
+  Delay: 0.058 seconds
+
+  Sent: 'AI: Test response 1752454703
+---'
+  Received: '---'
+  Delay: 0.059 seconds
+
+  Sent: 'NO_NEWLINE_1752454705'
+  Received: 'NO_NEWLINE_1752454705'
+  Delay: 0.153 seconds
+
+POSSIBLE CAUSES:
+1. Physical loopback in serial cable (TX connected to RX)
+2. USB serial adapter with internal loopback
+3. Another process on the system echoing serial data
+4. Virtual serial port with loopback enabled
+
+=== DEVICE INFO ===
+Port name: /dev/ttyUSB0
+Port settings: {'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 0.1, 'write_timeout': None, 'inter_byte_timeout': None}
+
+✓ Test log saved to: logs/serial_loopback_test_20250714_015820.log
