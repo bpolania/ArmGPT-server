@@ -13,6 +13,8 @@ import sys
 import time
 import signal
 from pathlib import Path
+from collections import deque
+from datetime import datetime, timedelta
 
 # Add src directory to Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
@@ -58,6 +60,10 @@ class TinyLLMSerialClient:
         self.message_processor = MessageProcessor(self.config.get('client', {}))
         self.llm_manager = LLMManager(self.config.get('tinyllm', {}))
         
+        # Echo detection - store recently sent messages with timestamps
+        self.sent_messages = deque(maxlen=10)  # Keep last 10 sent messages
+        self.echo_timeout = 2.0  # Messages older than 2 seconds are not considered echoes
+        
         # Setup signal handlers
         signal.signal(signal.SIGINT, self._signal_handler)
         signal.signal(signal.SIGTERM, self._signal_handler)
@@ -88,12 +94,53 @@ class TinyLLMSerialClient:
         log_system_event(self.logger, "Shutdown signal received, stopping client...")
         self.stop()
         
+    def _is_echo_message(self, received_message: str) -> bool:
+        """Check if received message is an echo of recently sent message
+        
+        Args:
+            received_message: The message received from serial port
+            
+        Returns:
+            bool: True if this is likely an echo of our own message
+        """
+        # Clean up the received message for comparison
+        received_clean = received_message.strip()
+        
+        # Get current time
+        now = datetime.now()
+        
+        # Check against recently sent messages
+        for sent_time, sent_msg in self.sent_messages:
+            # Skip messages older than echo timeout
+            if now - sent_time > timedelta(seconds=self.echo_timeout):
+                continue
+                
+            # Check for exact match or partial match
+            # Handle case where received message might be truncated or have extra chars
+            if (sent_msg in received_clean or 
+                received_clean in sent_msg or
+                received_clean.startswith("AI:") or  # Our response prefix
+                received_clean == "---"):  # Our response suffix
+                
+                time_diff = (now - sent_time).total_seconds()
+                log_process_event(self.logger, 
+                    f"Echo detected: '{received_clean[:50]}...' "
+                    f"(matches message sent {time_diff:.3f}s ago)", "debug")
+                return True
+                
+        return False
+        
     def message_callback(self, raw_message: str):
         """Callback to handle received messages
         
         Args:
             raw_message: Raw message from serial port
         """
+        # Check if this is an echo of our own message
+        if self._is_echo_message(raw_message):
+            log_process_event(self.logger, f"Ignoring echo: \"{raw_message[:50]}...\"", "debug")
+            return
+            
         # Process the message
         processed = self.message_processor.process(raw_message)
         
@@ -151,6 +198,9 @@ class TinyLLMSerialClient:
             
         # Format final message
         formatted_response = f"{prefix}{response}{suffix}"
+        
+        # Track sent message for echo detection
+        self.sent_messages.append((datetime.now(), formatted_response.strip()))
         
         # Send via serial client
         return self.serial_client.send_message(formatted_response)
