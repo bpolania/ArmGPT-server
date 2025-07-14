@@ -120,7 +120,7 @@ class TinyLLMSerialClient:
             if (sent_msg in received_clean or 
                 received_clean in sent_msg or
                 received_clean.startswith("AI:") or  # Our response prefix
-                received_clean == "---"):  # Our response suffix
+                "<<<END>>>" in received_clean):  # Our response suffix
                 
                 time_diff = (now - sent_time).total_seconds()
                 log_process_event(self.logger, 
@@ -196,8 +196,9 @@ class TinyLLMSerialClient:
         if len(response) > max_length - len(prefix) - len(suffix):
             response = response[:max_length - len(prefix) - len(suffix) - 3] + "..."
             
-        # Format final message
-        formatted_response = f"{prefix}{response}{suffix}"
+        # Format final message with clear terminator
+        # Add a special end-of-message marker that ARM can detect
+        formatted_response = f"{prefix}{response}\n{suffix}"
         
         # Track sent message for echo detection
         self.sent_messages.append((datetime.now(), formatted_response.strip()))
