@@ -9,7 +9,7 @@ serial:
 
 tinyllm:
   # TinyLLM configuration - use "mock" for testing, "api" for Raspberry Pi
-  interface_type: "mock"  # Use "api" for Raspberry Pi with Ollama
+  interface_type: "api"  # Use "api" for Raspberry Pi with Ollama
   api_endpoint: "http://localhost:11434/api/generate"
   headers:
     Content-Type: "application/json"
